@@ -1,0 +1,25 @@
+---
+
+- hosts: server
+  become: true
+  pre_tasks:
+
+  - name: Install Updates (Ubuntu)
+    apt:
+      upgrade: dist
+      update_cache: yes
+
+- hosts: server
+  become: true
+  roles:
+    - Neutron
+
+- hosts: server
+  become: true
+  roles:
+    - Horizon
+
+- hosts: server
+  become: true
+  roles:
+    - Cinder

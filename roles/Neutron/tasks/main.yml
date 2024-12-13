@@ -1,0 +1,20 @@
+---
+
+- name: Install zypper
+  apt:
+    name: zypper
+    state: present
+
+- name: Add Openstack Ussuri repository
+  command: >
+    zypper addrepo -f obs://Cloud:OpenStack:Ussuri/openSUSE_Leap/15.1 Ussuri
+
+- name: Install OpenStack Python client
+  apt:
+    name: python3-openstackclient
+    state: present
+
+- name: Install Neutron on server
+  apt:
+    name: neutron-server
+    state: present

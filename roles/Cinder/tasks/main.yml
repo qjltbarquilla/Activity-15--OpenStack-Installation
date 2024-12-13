@@ -1,0 +1,9 @@
+---
+
+- name: Install Cinder in server
+  apt:
+    name:
+      - cinder-api
+      - cinder-scheduler
+      - cinder-volume
+    state: present

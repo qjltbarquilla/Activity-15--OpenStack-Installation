@@ -1,0 +1,6 @@
+---
+
+- name: Install Horizon on server
+  apt:
+    name: openstack-dashboard
+    state: present
